@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Cor Processu Mobile</title>
+<link href="ccs/jquery-mobile/jquery.mobile-1.0a3.min.css" rel="stylesheet" type="text/css">
+<script src="ccs/jquery-mobile/jquery-1.5.min.js" type="text/javascript"></script>
+<script src="ccs/jquery-mobile/interpretadorAjax.js" type="text/javascript"></script>
+<script src="ccs/jquery-mobile/jquery.mobile-1.0a3.min.js" type="text/javascript"></script>
+<script src="lib/funciones.js" type="text/javascript"></script>
+</head>
+
+<body>
+<!------------ Login ------------>
+<div data-role="page" id="login">
+  <div data-role="header" align="center" data-theme="b">
+        <img src="images/SID_logo_Mobile.png" width="410" height="100"><div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li data-theme="b"><a onClick="sid()" data-theme="b">www.Integradores.net</a></li>
+                <li data-theme="b"><a onClick="sid()" data-theme="b">SID, C.A.</a></li>
+             </ul>
+        </div>
+	</div>
+  	<div data-role="content" align="center">
+	  	<input type="text" name="textinput" id="textinput" value="" placeholder="Usuario"/>
+		<input type="password" name="password" id="password" placeholder="Contraseña"/>
+    	<a onClick="login(document.getElementById('textinput').value, document.getElementById('password').value,'sid1029')" data-role="button" data-theme="b">Login</a>
+ 	</div>
+</div>
+<!------------ Fin Login ------------>
+
+<!------------ Menú Principal ------------>
+<div data-role="page" id="menu_ppal">
+  <div data-role="header" align="center" data-theme="b">
+        <img src="images/SID_logo_Mobile.png" width="410" height="100">
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+            	<li data-theme="b"><a onClick="salir()" data-theme="b">Salir</a></li>
+                <li data-theme="b"><a onClick="sid()" data-theme="b">SID, C.A.</a></li>
+             </ul>
+        </div>
+	</div>
+  <div data-role="content">
+    <ul data-role="listview" data-inset="true">
+      <li data-role="list-divider" role="heading" data-theme="b"><h3>Menú Principal</h3></li>
+      <li><a href="#menu_con">Consultas</a></li>
+      <li><a href="#menu_master">Mantenimiento de Tablas Máster</a></li>
+      <li><a href="#menu_op">Operaciones</a></li>
+      <li data-role="list-divider" role="heading" data-theme="b"></li>
+    </ul>
+  </div>
+</div>
+<!------------ Fin Menú Principal ------------>
+
+<!------------ Menú de Consultas ------------>
+<div data-role="page" id="menu_con">
+  <div data-role="header" align="center" data-theme="b">
+        <img src="images/SID_logo_Mobile.png" width="410" height="100">
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+	            <li><a onClick="redireccionar('index.html\#menu_ppal')">Regresar</a></li>
+            	<li data-theme="b"><a onClick="salir()" data-theme="b">Salir</a></li>
+                <li data-theme="b"><a onClick="sid()" data-theme="b">SID, C.A.</a></li>
+             </ul>
+        </div>
+	</div>
+  <div data-role="content">
+    <ul data-role="listview" data-inset="true">
+      <li data-role="list-divider" role="heading" data-theme="b"><h3>Menú de Consultas</h3></li>
+      <li><a onClick="redireccionar('ArticulosDisp.html')">Artículos Disponibles</a></li>
+	  <li><a onClick="PreConsultarComposicion()">Composiciones Disponibles</a></li>
+	  <li><a onClick="redireccionar('LotesCodif.html')">Lotes por Codificar</a></li>
+      <li data-role="list-divider" role="heading" data-theme="b"></li>
+    </ul>
+  </div>
+</div>
+<!------------ Fin Menú de Consultas ------------>
+
+
+<!------------ Menú de Operaciones ------------>
+<div data-role="page" id="menu_op">
+  <div data-role="header" align="center" data-theme="b">
+        <img src="images/SID_logo_Mobile.png" width="410" height="100">
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+	            <li><a onClick="redireccionar('index.html\#menu_ppal')">Regresar</a></li>
+            	<li data-theme="b"><a onClick="salir()" data-theme="b">Salir</a></li>
+                <li data-theme="b"><a onClick="sid()" data-theme="b">SID, C.A.</a></li>
+             </ul>
+        </div>
+	</div>
+  <div data-role="content">
+    <ul data-role="listview" data-inset="true">
+      <li data-role="list-divider" role="heading" data-theme="b"><h3>Menú de Operaciones</h3></li>
+      <li><a onClick="PreConsultaRecepcion('CInventario.html')">Inventario Inicial</a></li>
+      <li><a onClick="PreConsultaRecepcion('CCodificacion.html')">Codificaciones</a></li>
+	  <li><a onClick="PreConsultaRecepcion('CDespacho.html')">Despachos</a></li>
+      <li><a onClick="PreConsultaRecepcion('CInventario1.html')">Inventario de Almacén</a></li>
+      <li data-role="list-divider" role="heading" data-theme="b"></li>
+    </ul>
+  </div>
+</div>
+<!------------ Fin Menú de Operaciones ------------>
+
+<!------------ Menú de Matenimiento de Tablas Master ------------>
+<div data-role="page" id="menu_master">
+  <div data-role="header" align="center" data-theme="b">
+        <img src="images/SID_logo_Mobile.png" width="410" height="100">
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+            	<li><a onClick="redireccionar('index.html\#menu_ppal')">Regresar</a></li>
+            	<li data-theme="b"><a onClick="salir()" data-theme="b">Salir</a></li>
+                <li data-theme="b"><a onClick="sid()" data-theme="b">SID, C.A.</a></li>
+             </ul>
+        </div>
+	</div>
+  <div data-role="content">
+    <ul data-role="listview" data-inset="true">
+      <li data-role="list-divider" role="heading" data-theme="b"><h3>Menú de Matenimiento de Tablas Máster</h3></li>
+      <li><a onClick="redireccionar('CAlmacen.html')">Almacén</a></li>
+      <li><a onClick="PreConsultaRecepcion('CArticulos.html')">Artículos</a></li>
+      <li><a onClick="redireccionar('ConsultaClase.html')">Clase</a></li>
+      <li><a onClick="redireccionar('ConsultaColor.html')">Color</a></li>
+      <li><a onClick="redireccionar('ConsultaComp.html')">Composiciones</a></li>
+      <li><a onClick="redireccionar('ConsultaEmpinst.html')">Empisnt</a></li>
+      <li><a onClick="redireccionar('ConsultaGrupo.html')">Grupo</a></li>
+      <li><a onClick="redireccionar('ConsultaMaterial.html')">Material</a></li>
+      <li><a onClick="redireccionar('ConsultaMP.html')">Materia Prima</a></li>
+      <li><a onClick="redireccionar('CResponsable.html')">Responsable</a></li>
+      <li><a onClick="redireccionar('ConsultaSGrupo.html')">Subgrupo</a></li>
+      <li><a onClick="redireccionar('ConsultaTE.html')">Tipo Empisnt</a></li>
+      <li><a onClick="redireccionar('ConsultaTR.html')">Tipo Responsable</a></li>
+      <li><a onClick="redireccionar('ConsultaTU.html')">Tipo Ubicación</a></li>
+      <li data-role="list-divider" role="heading" data-theme="b"></li>
+    </ul>
+  </div>
+</div>
+<!------------ Fin Menú de Mantenimiento de Tablas Máster ------------>
+</body>
+</html>
